@@ -1,0 +1,53 @@
+<ng-template [ngIf]="state === 0">
+  <button class="btn btn-info" (click)="stateFn(1)">Yeni kullanıcı ekle</button>
+  <table class="table">
+    <tr>
+      <th>Düzenle</th>
+      <th>ID</th>
+      <th>Email</th>
+      <th>Şifre</th>
+      <th>Cinsiyet</th>
+      <th>Yaş</th>
+    </tr>
+    <tr *ngFor="let k of kullanicilar">
+      <td><button class="btn btn-success" (click)="edit(k)">Düzenle</button></td>
+      <td>{{k.id}}</td>
+      <td>{{k.email}}</td>
+      <td>{{k.password}}</td>
+      <!--    <td>{{k.gender ? 'Bay' : 'Bayan'}}</td>-->
+      <td>{{k.genderDTO}}</td>
+      <td>{{k.age}}</td>
+    </tr>
+  </table>
+
+</ng-template>
+<ng-template [ngIf]="state === 1">
+  <button class="btn btn-danger" (click)="stateFn(0)">Listemeye geri dön</button>
+  <app-kullanici-ekle></app-kullanici-ekle>
+</ng-template>
+<ng-template [ngIf]="state === 2">
+  <button class="btn btn-danger" (click)="stateFn(0)">Listemeye geri dön</button>
+  <div class="row">
+    <div class="form-group">
+      <label for="">Email</label>
+      <input type="email" class="form-control" [(ngModel)]="editUser.email">
+    </div>
+    <div class="form-group">
+      <label for="">Şifre</label>
+      <input type="text" class="form-control" [(ngModel)]="editUser.password">
+    </div>
+    <div class="form-group">
+      <label for="">Cinsiyet</label>
+      <select  [(ngModel)]="editUser.genderDTO" class="form-control">
+        <option value="0">Bayan</option>
+        <option value="1">Bay</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="">Yaş</label>
+      <input type="number" class="form-control" [(ngModel)]="editUser.age">
+    </div>
+    <button class="btn btn-dark" (click)="update()">Güncelle</button>
+  </div>
+
+</ng-template>

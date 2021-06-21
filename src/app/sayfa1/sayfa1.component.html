@@ -5,21 +5,35 @@ Toplam : {{sayi3}}
 <div>
   <input type="number" [(ngModel)]="sayi1" (change)="topla()">
 </div>
-<button (click)="topla()">Hesapla</button>
+<button (click)="topla()" class="btn btn-danger">Hesapla</button>
 
 
-<table>
+<!--<table>-->
+<!--  <tr>-->
+<!--    <th>Başlık1</th>-->
+<!--    <th>Başlık2</th>-->
+<!--    <th>Başlık3</th>-->
+<!--  </tr>-->
+<!--  <tr *ngFor="let a of liste">-->
+<!--    <td>{{a}}</td>-->
+<!--    <td>{{hesapla(a)}}</td>-->
+<!--    <td>3</td>-->
+<!--  </tr>-->
+
+
+
+<!--</table>-->
+
+<ng-template [ngIf]="!durum">
+  weqwhjkej
+</ng-template>
+<table class="table">
   <tr>
-    <th>Başlık1</th>
-    <th>Başlık2</th>
-    <th>Başlık3</th>
+    <th>ID</th>
+    <th>İsim</th>
   </tr>
-  <tr *ngFor="let a of liste">
-    <td>{{a}}</td>
-    <td>{{hesapla(a)}}</td>
-    <td>3</td>
+  <tr *ngFor="let ao of aylar">
+    <td>{{ao.id}}</td>
+    <td>{{ao.name}}</td>
   </tr>
-
-
-
 </table>

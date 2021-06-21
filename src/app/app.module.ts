@@ -8,6 +8,8 @@ import {FormsModule} from '@angular/forms';
 import { BootComponent } from './boot/boot.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import {HttpClientModule} from '@angular/common/http';
+import { KullaniciListComponent } from './kullanici-list/kullanici-list.component';
+import { KullaniciEkleComponent } from './kullanici-ekle/kullanici-ekle.component';
 
 
 @NgModule({
@@ -15,7 +17,9 @@ import {HttpClientModule} from '@angular/common/http';
     AppComponent,
     Sayfa1Component,
     BootComponent,
-    NavbarComponent
+    NavbarComponent,
+    KullaniciListComponent,
+    KullaniciEkleComponent
   ],
   imports: [
     BrowserModule,

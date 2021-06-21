@@ -1,0 +1,25 @@
+Toplam : {{sayi3}}
+<div>
+  <input type="number" [(ngModel)]="sayi2" (change)="topla()">
+</div>
+<div>
+  <input type="number" [(ngModel)]="sayi1" (change)="topla()">
+</div>
+<button (click)="topla()">Hesapla</button>
+
+
+<table>
+  <tr>
+    <th>Başlık1</th>
+    <th>Başlık2</th>
+    <th>Başlık3</th>
+  </tr>
+  <tr *ngFor="let a of liste">
+    <td>{{a}}</td>
+    <td>{{hesapla(a)}}</td>
+    <td>3</td>
+  </tr>
+
+
+
+</table>

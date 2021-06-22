@@ -1,0 +1,64 @@
+<ng-template [ngIf]="durum === 0">
+  <button class="btn btn-success" (click)="statuFn(1)">Yeni araç ekle</button>
+  <table class="table">
+    <tr>
+      <th>İşlem</th>
+      <th>ID</th>
+      <th>Açıklama</th>
+      <th>Marka</th>
+      <th>Vites</th>
+    </tr>
+    <tr *ngFor="let a of araclar">
+      <td><button class="btn btn-danger" (click)="duzenleFn(a)">Düzenle</button></td>
+      <td>{{a.id}}</td>
+      <td>{{a.aciklama}}</td>
+      <td>{{a.marka.name}}</td>
+      <td>{{a.vites ? 'Otomatik' : 'Manuel'}}</td>
+    </tr>
+  </table>
+</ng-template>
+<ng-template [ngIf]="durum === 1">
+  <button class="btn btn-success" (click)="statuFn(0)">Listeye geri dön</button>
+  <div class="form-group">
+    <label for="">Açıklama</label>
+    <input type="text" class="form-control" [(ngModel)]="arac.aciklama">
+  </div>
+  <div class="form-group">
+    <label for="">Marka</label>
+    <select class="form-control" [(ngModel)]="arac.markaId">
+      <option value="">Lütfen marka seçiniz</option>
+      <option [value]="b.id" *ngFor="let b of markalar">{{b.name}}</option>
+    </select>
+  </div>
+  <div class="form-group">
+    <label for="">Vites</label>
+    <select class="form-control" [(ngModel)]="arac.vitesDTO">
+      <option [value]="false">Manuel</option>
+      <option [value]="true">Otomatik</option>
+    </select>
+  </div>
+  <button class="btn btn-success" (click)="kaydetFn()">Kaydet</button>
+</ng-template>
+<ng-template [ngIf]="durum === 2">
+  <button class="btn btn-success" (click)="statuFn(0)">Listeye geri dön</button>
+  <div class="form-group">
+    <label for="">Açıklama</label>
+    <input type="text" class="form-control" [(ngModel)]="arac.aciklama">
+  </div>
+  <div class="form-group">
+    <label for="">Marka</label>
+    <select class="form-control" [(ngModel)]="arac.markaId">
+      <option value="">Lütfen marka seçiniz</option>
+      <option [value]="b.id" *ngFor="let b of markalar">{{b.name}}</option>
+    </select>
+  </div>
+  <div class="form-group">
+    <label for="">Vites</label>
+    <select class="form-control" [(ngModel)]="arac.vitesDTO">
+      <option [value]="false">Manuel</option>
+      <option [value]="true">Otomatik</option>
+    </select>
+  </div>
+  <button class="btn btn-success" (click)="guncelleFn()">Kaydet</button>
+
+</ng-template>

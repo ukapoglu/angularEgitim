@@ -1,0 +1,32 @@
+<ng-template [ngIf]="durum === 0">
+  <button class="btn btn-success" (click)="changeState(1)">Yeni marka</button>
+  <table class="table">
+    <tr>
+      <th>İşlem</th>
+      <th>ID</th>
+      <th>Ad</th>
+    </tr>
+    <tr *ngFor="let a of markalar">
+      <td><button class="btn btn-info" (click)="duzenleFn(a)">Düzenle</button></td>
+      <td>{{a.id}}</td>
+      <td>{{a.name}}</td>
+    </tr>
+  </table>
+</ng-template>
+<ng-template [ngIf]="durum === 1">
+  <button class="btn btn-success" (click)="changeState(0)">Listeye geri dön</button>
+  <div class="form-group">
+    <label for="">Marka Adı</label>
+    <input type="text" [(ngModel)]="mark.name" class="form-control">
+  </div>
+  <button class="btn btn-danger" (click)="saveMarka()">Kaydet</button>
+</ng-template>
+<ng-template [ngIf]="durum === 2">
+  <button class="btn btn-success" (click)="changeState(0)">Listeye geri dön</button>
+  <div class="form-group">
+    <label for="">Marka Adı</label>
+    <input type="text" [(ngModel)]="mark.name" class="form-control">
+  </div>
+  <button class="btn btn-danger" (click)="updateMarka()">Güncelle</button>
+</ng-template>
+

@@ -10,6 +10,8 @@ import { NavbarComponent } from './navbar/navbar.component';
 import {HttpClientModule} from '@angular/common/http';
 import { KullaniciListComponent } from './kullanici-list/kullanici-list.component';
 import { KullaniciEkleComponent } from './kullanici-ekle/kullanici-ekle.component';
+import { MarkaComponent } from './marka/marka.component';
+import { AracComponent } from './arac/arac.component';
 
 
 @NgModule({
@@ -19,7 +21,9 @@ import { KullaniciEkleComponent } from './kullanici-ekle/kullanici-ekle.componen
     BootComponent,
     NavbarComponent,
     KullaniciListComponent,
-    KullaniciEkleComponent
+    KullaniciEkleComponent,
+    MarkaComponent,
+    AracComponent
   ],
   imports: [
     BrowserModule,
